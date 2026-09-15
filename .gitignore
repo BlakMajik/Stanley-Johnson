@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+dist/
+
+# Scratch & Extraction temporary files
+pptx_extracted/
+*.zip
+*.pptx
+Stanley-Johnson-Brand-Review-2026.md
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
