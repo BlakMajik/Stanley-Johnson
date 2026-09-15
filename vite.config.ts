@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Stanley-Johnson/',
+  // Automatically use repository base path on GitHub Pages and root '/' on Vercel/Local
+  base: process.env.GITHUB_ACTIONS && !process.env.VERCEL ? '/Stanley-Johnson/' : '/',
   server: {
     port: 3000,
     open: false,
