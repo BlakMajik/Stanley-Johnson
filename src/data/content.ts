@@ -84,6 +84,9 @@ export interface SiteContent {
   inquiryCategories: InquiryCategory[];
 }
 
+const base = import.meta.env.BASE_URL || '/';
+const asset = (path: string) => `${base.endsWith('/') ? base : base + '/'}${path.replace(/^\//, '')}`;
+
 export const siteContent: SiteContent = {
   brand: {
     name: "Stanley Johnson",
@@ -93,9 +96,9 @@ export const siteContent: SiteContent = {
       "Meet Stanley Johnson, gospel artist and author of Dadfirmations, sharing encouragement through music and the words we pass on.",
     shortBio:
       "Stanley Johnson is a gospel recording artist, author, and worship leader dedicated to uplifting lives through Christ-centered music, authentic fatherhood reflections, and meaningful church and community conversations.",
-    portraitHero: "/images/stanley_hero_portrait.jpg",
-    portraitAbout: "/images/stanley_about_portrait.png",
-    portraitCasual: "/images/stanley_casual_portrait.jpg",
+    portraitHero: asset("images/stanley_hero_portrait.jpg"),
+    portraitAbout: asset("images/stanley_about_portrait.png"),
+    portraitCasual: asset("images/stanley_casual_portrait.jpg"),
   },
   socialLinks: {
     youtube: "https://www.youtube.com/@TheStanleyJMusic",
@@ -144,7 +147,7 @@ export const siteContent: SiteContent = {
       subtitle: "Featured Single",
       description:
         "A resonant declaration of spiritual freedom, redemption, and personal renewal. 'Trading Chains' captures soulful gospel vocals paired with a message of releasing burdens and embracing grace.",
-      coverImage: "/images/trading_chains_cover.jpg",
+      coverImage: asset("images/trading_chains_cover.jpg"),
       category: "Single Release",
       distrokidUrl: "https://distrokid.com/hyperfollow/stanleyjohnson/trading-chains",
       featuredQuote: "A testimony of freedom and purpose expressed through gospel music.",
@@ -155,7 +158,7 @@ export const siteContent: SiteContent = {
       subtitle: "Worship Anthem & Video",
       description:
         "A heartfelt, contemplative worship ballad highlighting God as a refuge in times of trial and uncertainty. Featured historically in the Journal of Gospel Music.",
-      coverImage: "/images/hiding_place_thumb.jpg",
+      coverImage: asset("images/hiding_place_thumb.jpg"),
       category: "Official Music Video",
       youtubeId: "GLhcAwstDTg",
       youtubeUrl: "https://www.youtube.com/watch?v=GLhcAwstDTg",
@@ -168,7 +171,7 @@ export const siteContent: SiteContent = {
       subtitle: "Title Track",
       description:
         "An inspiring track centering on surrender, divine guidance, and trusting God with the steps ahead. Blends contemporary gospel arrangements with heartfelt lyricism.",
-      coverImage: "/images/beyond_me_thumb.jpg",
+      coverImage: asset("images/beyond_me_thumb.jpg"),
       category: "Official Audio / Video",
       youtubeId: "2YN4WEJrFgs",
       youtubeUrl: "https://www.youtube.com/watch?v=2YN4WEJrFgs",
